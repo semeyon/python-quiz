@@ -2,33 +2,12 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Вопросы и задания по Python @ GitHub</title>
-
-  <style type="text/css">
-    body {
-      margin-top: 1.0em;
-      background-color: #354a19;
-      font-family: Helvetica, Arial, FreeSans, san-serif;
-      color: #ffffff;
-    }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-    h1 { font-size: 3.8em; color: #cab5e6; margin-bottom: 3px; }
-    h1 .small { font-size: 0.4em; }
-    h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #cab5e6; }
-    h3 { text-align: center; color: #cab5e6; }
-    a { color: #cab5e6; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-    pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
-  </style>
-
-</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+  </head>
 <body>
+<div class="container">
 <h1>Вопросы и задания по Python <a class="permalink" href="http://pyobject.ru/blog/2010/02/04/python-quiz/">∞</a></h1>
 
 <p>Меня периодически спрашивают о тестовых заданиях по Python-тематике. Я решил
@@ -60,19 +39,19 @@
 <li><p>Написать функцию, которой можно передавать аргументы либо списком/кортежем,
 либо по одному. Функция производит суммирование всех аргументов.</p>
 
-<code><pre>&gt;&gt;&gt; f(1, 2, 3)
+<pre>&gt;&gt;&gt; f(1, 2, 3)
 6
 &gt;&gt;&gt; f([1, 2, 3])
 6
 &gt;&gt;&gt; f((3, 5, 6))
 14
 &gt;&gt;&gt; f(3, (5, 6))
-14</pre></code></li>
+14</pre></li>
 
 <li><p>Написать функцию-фабрику, которая будет возвращать функцию сложения с
 аргументом.</p>
 
-<code><pre>&gt;&gt;&gt; add5 = addition(5) # функция addition возвращает функцию сложения с 5
+<pre>&gt;&gt;&gt; add5 = addition(5) # функция addition возвращает функцию сложения с 5
 &gt;&gt;&gt; add5(3) # вернет 3 + 5 = 8
 8
 &gt;&gt;&gt; add5(8) # вернет 8 + 5 = 13
@@ -82,13 +61,13 @@
 &gt;&gt;&gt; add8(2) # вернет 2 + 8 = 10
 10
 &gt;&gt;&gt; add8(4) # вернет 4 + 8 = 12
-12</pre></code>
+12</pre>
 <p>Написать варианты с обычной "внутренней" и анонимной lambda-функцией.</p></li>
 
 <li><p>Написать фабрику, аналогичную п.2, но возвращающей список таких функций</p>
 
-<code><pre>&gt;&gt;&gt; additionals = addition_range(0, 5) # список из функций сложения от 0 до 5 включительно
-</pre></code>
+<pre>&gt;&gt;&gt; additionals = addition_range(0, 5) # список из функций сложения от 0 до 5 включительно
+</pre>
 
 <p>т.е. аналогичное <code>[add0, add1, add2, add3, add4, add5]</code></p></li>
 <li><p>Написать аналог map:</p>
@@ -98,8 +77,8 @@
 <li>полагается, что эти функции — функции одного аргумента</li>
 </ul>
 
-<code><pre>&gt;&gt;&gt; mymap([add0, add1, add2], [1, 2, 3])
-[(1, 2, 3), (2, 3, 4), (3, 4, 5)]</pre></code>
+<pre>&gt;&gt;&gt; mymap([add0, add1, add2], [1, 2, 3])
+[(1, 2, 3), (2, 3, 4), (3, 4, 5)]</pre>
 
 <p>в данном случае "развернутая" запись будет:
 <code>[(add0(1), add0(2), add0(3)), (add1(1), add1(2), add1(3)), (add2(1), add2(2), add2(3))]</code></p></li>
@@ -108,13 +87,13 @@
 <h2>Декораторы</h2>
 <ol>
 <li><p>Написать декоратор который пишет Hello world, имя функции и возвращает результат работы.</p>
-<code><pre>&gt;&gt;&gt;@hello_world
+<pre>&gt;&gt;&gt;@hello_world
 ....def some_funtion():
 ....    return 42
 &gt;&gt;&gt;some_function()
 Hello world, some_function!
 42
-</pre></code>
+</pre>
 </li>
 <li><p>Написать декоратор который cчитает время выполнения функции.</p>
 <pre>
@@ -126,8 +105,8 @@ Hello world, some_function!
 </pre></li>
 <li><p>Написать два декоратора: 
         <ul>
-            <li>@accepts(int, (int,float)) - принимает набор типов и проверяет, что входные параметры декарируемой функции соответствуют этим типам.</li>
-            <li>@returns((int,float))      - принимает набор типов и проверяет, что результат работы функции соответствует этим типам.</li>
+            <li><code>@accepts(int, (int,float))</code> - принимает набор типов и проверяет, что входные параметры декарируемой функции соответствуют этим типам.</li>
+            <li><code>@returns((int,float))</code> - принимает набор типов и проверяет, что результат работы функции соответствует этим типам.</li>
         </ul>
     </p>
 </li>
@@ -137,7 +116,7 @@ Hello world, some_function!
 <ol>
 <li><p>Написать функцию-генератор cycle которая бы возвращала циклический итератор.</p>
 
-<code><pre>&gt;&gt;&gt; i = iter([1, 2, 3])
+<pre>&gt;&gt;&gt; i = iter([1, 2, 3])
 &gt;&gt;&gt; c = cycle(i)
 &gt;&gt;&gt; c.next()
 1
@@ -146,7 +125,7 @@ Hello world, some_function!
 &gt;&gt;&gt; c.next()
 3
 &gt;&gt;&gt; c.next()
-1</pre></code>
+1</pre>
 </li>
 <li><p>Написать функцию-генератор chain, которая последовательно итерирует переданные объекты (произвольное количество)</p>
 
@@ -190,7 +169,7 @@ StopIteration</code></pre></li>
 <li>сделать так, чтобы при print отображались все публичные атрибуты</li>
 </ol>
 
-<code><pre>&gt;&gt;&gt; class X(Observable):
+<pre>&gt;&gt;&gt; class X(Observable):
 ...     pass
 &gt;&gt;&gt; x = X(foo=1, bar=5, _bazz=12, name='Amok', props=('One', 'two'))
 &gt;&gt;&gt; print x
@@ -200,10 +179,10 @@ X(bar=5, foo=1, name='Amok', props=('One', 'two'))
 &gt;&gt;&gt; x.name
 'Amok'
 &gt;&gt;&gt; x._bazz
-12</pre></code></li>
+12</pre></li>
 <li><p>Написать класс, который бы по всем внешним признакам был бы словарем, но позволял обращаться к ключам как к атрибутам.</p>
 
-<code><pre>&gt;&gt;&gt; x = DictAttr([('one', 1), ('two', 2), ('three', 3)])
+<pre>&gt;&gt;&gt; x = DictAttr([('one', 1), ('two', 2), ('three', 3)])
 &gt;&gt;&gt; x
 { 'one': 1, 'three': 3, 'two': 2}
 &gt;&gt;&gt; x['three']
@@ -217,11 +196,11 @@ X(bar=5, foo=1, name='Amok', props=('One', 'two'))
 &gt;&gt;&gt; x.five
 Traceback (most recent call last):
   ...
-AttributeError</pre></code>
+AttributeError</pre>
 </li>
 <li><p>Пункт 2 с усложнением: написать родительский класс <code>XDictAttr</code> так, чтобы у наследника динамически определялся ключ по наличию метода <code>get_&lt;KEY&gt;</code>.</p>
 
-<code><pre>&gt;&gt;&gt; class X(XDictAttr):
+<pre>&gt;&gt;&gt; class X(XDictAttr):
 ...     def get_foo(self):
 ...         return 5
 ...     def get_bar(self):
@@ -241,9 +220,9 @@ X: { 'one': 1, 'three': 3, 'two': 2}
 &gt;&gt;&gt; x.get('foo', 'missing')
 5
 &gt;&gt;&gt; x.get('bzz', 'missing')
-'missing'</pre></code></li>
+'missing'</pre></li>
 <li><p>Написать класс, который регистрирует свои экземпляры и предоставляет интерфейс итератора по ним</p>
-<code><pre>&gt;&gt;&gt; x = Reg()
+<pre>&gt;&gt;&gt; x = Reg()
 &gt;&gt;&gt; x
 &lt;Reg instance at 0x98b6ecc&gt;
 &gt;&gt;&gt; y = Reg()
@@ -255,7 +234,7 @@ X: { 'one': 1, 'three': 3, 'two': 2}
 ...     print i
 &lt;Reg instance at 0x98b6ecc&gt;
 &lt;Reg instance at 0x98b6fec&gt;
-&lt;Reg instance at 0x98ba02c&gt;</pre></code>
+&lt;Reg instance at 0x98ba02c&gt;</pre>
 </li>
 </ol>
 
@@ -275,7 +254,7 @@ X: { 'one': 1, 'three': 3, 'two': 2}
 <ol>
 <li><p>Реализовать дескрипторы, которые бы фиксировали тип атрибута</p>
 
-<code><pre>&gt;&gt;&gt; class Image(object):
+<pre>&gt;&gt;&gt; class Image(object):
 ...     height = Property(0)
 ...     width = Property(0)
 ...     path = Property('/tmp/')
@@ -291,11 +270,11 @@ X: { 'one': 1, 'three': 3, 'two': 2}
 &gt;&gt;&gt; img.path = 320
 Traceback (most recent call last):
   ...
-TypeError</pre></code>
+TypeError</pre>
 </li>
 
 <li><p>Реализовать базовый класс (используя метакласс), который бы фиксировал тип атрибута</p>
-<code><pre>&gt;&gt;&gt; class Image(Object):
+<pre>&gt;&gt;&gt; class Image(Object):
 ...     height = 0
 ...     width = 0
 ...     path = '/tmp'
@@ -311,12 +290,12 @@ TypeError</pre></code>
 &gt;&gt;&gt; img.path = 320
 Traceback (most recent call last):
   ...
-TypeError</pre></code>
+TypeError</pre>
 
 
 </li><li><p>Реализовать базовый класс (используя метакласс) и дескрипторы, которые бы на основе класса создавали SQL-схему (ANSI SQL) для модели:</p>
 
-<code><pre>&gt;&gt;&gt; class Image(Table):
+<pre>&gt;&gt;&gt; class Image(Table):
 ...     height = Integer()
 ...     width = Integer()
 ...     path = Str(128)
@@ -326,12 +305,13 @@ CREATE TABLE image (
     height integer,
     width integer,
     path varchar(128)
-)</pre></code>
+)</pre>
 
 <p>реализовывать <code>[NOT] NULL</code>, <code>PRIMARY KEY</code>, <code>FOREIGN KEY</code>, <code>CONSTRAINTS</code> не нужно. Достаточно реализации двух типов: <code>Integer</code> и <code>Str</code>.</p>
 </li>
 </ol>
 <br/>
 <a class="permalink" href="http://pyobject.ru/blog/2010/02/04/python-quiz/">Оригинал</a>
+</div>
 </body>
 </html>
