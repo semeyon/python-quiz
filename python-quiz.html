@@ -82,13 +82,22 @@
 
 <h2>Декораторы</h2>
 <ol>
-<li><p>Написать декоратор cчитает время выполнения функции.</p>
+<li><p>Написать декоратор который пишет Hello world, имя функции и возвращает результат работы.</p>
+<code><pre>&gt;&gt;&gt;@hello_world
+....def some_funtion():
+....    return 42
+&gt;&gt;&gt;some_function()
+Hello world, some_function!
+42
+</pre></code>
+</li>
+<li><p>Написать декоратор который cчитает время выполнения функции.</p>
 <pre>
 &gt;&gt;&gt;@timer
-...    def todoSomething():
-...       return
+...def todoSomething():
+...    return
 &gt;&gt;&gt;todoSomething()
-&gt;&gt;&gt;1e-5
+1e-5
 </pre></li>
 </ol>
 <h2>Итераторы</h2>
