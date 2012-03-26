@@ -86,13 +86,17 @@
 
 <h2>Декораторы</h2>
 <ol>
-<li><p>Написать декоратор который пишет Hello world, имя функции и возвращает результат работы.</p>
-<pre>&gt;&gt;&gt;@hello_world
+<li><p>Написать декоратор добовляющий к докстрингам функции фразу "I'm was here!:)".</p>
+<pre>&gt;&gt;&gt;@vasia
 ....def some_funtion():
 ....    return 42
 &gt;&gt;&gt;some_function()
-Hello world, some_function!
 42
+&gt;&gt;&gt;help(some_function)
+Help on function some_function in module __main__:
+
+f()
+    I'm was here!:)
 </pre>
 </li>
 <li><p>Написать декоратор который cчитает время выполнения функции.</p>
